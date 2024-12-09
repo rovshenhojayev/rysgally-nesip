@@ -477,14 +477,14 @@ a:hover {
 .brand-text {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   letter-spacing: -0.5px;
-  color: var(--text-primary);
-  margin: 0;
-  background: linear-gradient(45deg, var(--green-accent), var(--green-dark));
+  margin-left: 0.5rem;
+  background: linear-gradient(45deg, #0d47a1, #1976d2, #2196f3);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Catalog Preview Card */
@@ -515,4 +515,344 @@ a:hover {
 .btn-primary:hover .bi-download,
 .btn-primary:hover .bi-file-earmark-pdf {
   transform: translateY(2px);
+}
+
+/* About Page Styling */
+.display-4,
+.display-5 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.card.border-0.shadow-sm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.border-0.shadow-sm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.text-secondary {
+  color: #6c757d !important;
+}
+
+.bi {
+  line-height: 1;
+}
+
+/* Stats Cards */
+.card .display-4 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Production Details */
+.d-flex.justify-content-between {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.d-flex.justify-content-between:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+}
+
+/* Document Cards */
+.document-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.document-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.document-card .card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.document-card .card-body {
+  padding: 1.5rem;
+}
+
+.document-card .card-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* Document Carousel */
+#documentCarousel .carousel-item {
+  padding: 2rem 0;
+}
+
+#documentCarousel .carousel-control-prev,
+#documentCarousel .carousel-control-next {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--green-accent);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+
+#documentCarousel .carousel-control-prev {
+  left: 1rem;
+}
+
+#documentCarousel .carousel-control-next {
+  right: 1rem;
+}
+
+#documentCarousel .carousel-control-prev:hover,
+#documentCarousel .carousel-control-next:hover {
+  opacity: 1;
+}
+
+#documentCarousel .carousel-indicators {
+  bottom: 0;
+}
+
+#documentCarousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--green-accent);
+  opacity: 0.5;
+  margin: 0 5px;
+}
+
+#documentCarousel .carousel-indicators button.active {
+  opacity: 1;
+}
+
+/* Document Grid Responsive */
+@media (max-width: 768px) {
+  .document-card .card-img-top {
+    height: 200px;
+  }
+
+  #documentCarousel .carousel-control-prev,
+  #documentCarousel .carousel-control-next {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Logo Text Gradient */
+.brand-text {
+  background: linear-gradient(45deg, #0d47a1, #1976d2, #2196f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Certification Showcase Styles */
+.certification-showcase {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.certification-showcase:hover {
+  transform: translateY(-5px);
+}
+
+.certification-image {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.certification-image:hover {
+  opacity: 0.9;
+}
+
+.carousel-navigation {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(var(--bs-primary-rgb), 0.9);
+  color: white;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.carousel-nav-btn:hover {
+  background: var(--bs-primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn.prev {
+  left: -20px;
+}
+
+.carousel-nav-btn.next {
+  right: -20px;
+}
+
+/* Modal Styles */
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.modal-header {
+  background: none;
+}
+
+/* Certification Card Responsive */
+@media (max-width: 768px) {
+  .certification-showcase {
+    margin: 0 20px;
+  }
+
+  .carousel-nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .carousel-nav-btn.prev {
+    left: 0;
+  }
+
+  .carousel-nav-btn.next {
+    right: 0;
+  }
+}
+
+/* Document Page Styles */
+.certification-card {
+  transition: transform 0.3s ease;
+  height: 100%;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.certification-card .card-body {
+  padding: 1.5rem;
+}
+
+.certification-card .doc-image {
+  height: 100px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.certification-card .doc-image:hover {
+  opacity: 0.8;
+}
+
+.certification-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.certification-card .card-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Document Modal Styles */
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background: none;
+  border-bottom: none;
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-body img {
+  max-height: 80vh;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Catalog Preview Card */
+.catalog-preview-card {
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background: #fff;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .certification-card .doc-image {
+    height: 80px;
+  }
+
+  .certification-card .card-title {
+    font-size: 1rem;
+  }
+
+  .certification-card .card-text {
+    font-size: 0.85rem;
+  }
 }

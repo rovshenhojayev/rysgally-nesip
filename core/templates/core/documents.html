@@ -1,0 +1,117 @@
+{% extends 'core/base.html' %} {% load static %}
+<p>.</p>
+{% block title %}Documents{% endblock %}
+<p>.</p>
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h1 class="display-4 fw-bold mb-4">Documents & Certifications</h1>
+        <p class="lead text-secondary">
+          Our certifications and quality standards
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      {% if documents %} {% for document in documents %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card text-center certification-card">
+          <div class="card-body p-4">
+            {% if document.image %}
+            <img
+              src="{{ document.image.url }}"
+              alt="{{ document.title }}"
+              class="img-fluid doc-image"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal{{ document.id }}"
+            />
+            {% endif %}
+            <h5 class="card-title">{{ document.title }}</h5>
+            <p class="card-text">{{ document.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Modal -->
+      <div
+        class="modal fade"
+        id="imageModal{{ document.id }}"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">{{ document.title }}</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="{{ document.image.url }}"
+                alt="{{ document.title }}"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <div class="col-12 text-center py-5">
+        <i class="bi bi-file-earmark-text display-1 text-secondary mb-3"></i>
+        <h3>No Documents Available</h3>
+        <p class="text-secondary">Documents will be added soon.</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Product Catalog Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="display-5 fw-bold mb-4">Download Our Product Catalog</h2>
+        <p class="lead text-secondary mb-4">
+          Get detailed information about our products, specifications, and
+          company profile in our comprehensive catalog.
+        </p>
+        <a
+          href="{% static 'core/documents/company-catalog.pdf' %}"
+          class="btn btn-primary btn-lg"
+          target="_blank"
+        >
+          <i class="bi bi-file-earmark-pdf me-2 text-white"></i>Download
+          Complete Package
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <div class="card catalog-preview-card">
+            <div class="card-body p-4 text-center">
+              <i class="bi bi-file-earmark-pdf display-1 text-primary mb-3"></i>
+              <h4 class="mb-3">Company Catalog</h4>
+              <p class="text-secondary mb-0">
+                Complete product specifications, company information, and more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,83 +1,124 @@
-{% extends 'core/base.html' %} {% block title %}Products{% endblock %}
+{% extends 'core/base.html' %} {% load static %} {% load i18n %}
+
+<p>.</p>
+{% block title %}{% trans "Our Products" %}{% endblock %}
 <p>.</p>
 {% block content %}
-<div class="container py-5">
-  <!-- Brand Logo Section -->
-  <div class="text-center mb-5">
-    <img
-      src="https://rysgallynesip.com.tm/static/assets/images/icons/Cyrag-logo-text-200px.png"
-      alt="Chyrag"
-      class="img-fluid"
-      style="max-width: 500px"
-    />
-  </div>
-
-  <h1 class="text-center mb-5">Our Light Bulb Collection</h1>
-
-  <!-- Products Grid -->
-  <div class="row g-4">
-    {% for product in products %}
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
+<!-- Hero Section -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
         <img
-          src="{{ product.image.url }}"
-          class="card-img-top"
-          alt="{{ product.name }}"
-          style="height: 250px; object-fit: cover"
+          src="{% static 'core/images/Cyrag-logo-text-200px.png' %}"
+          alt="Cyrag Logo"
+          class="img-fluid mb-4"
+          style="max-width: 500px"
         />
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.description|truncatewords:20 }}</p>
-        </div>
-        <div class="card-footer bg-white">
-          <button
-            class="btn btn-outline-primary w-100"
-            data-bs-toggle="modal"
-            data-bs-target="#productModal{{ product.id }}"
-          >
-            View Details
-          </button>
-        </div>
+        <h1 class="display-4 fw-bold mb-4">Our Products</h1>
+        <p class="lead text-secondary">
+          Discover our range of high-quality products designed to meet your
+          needs.
+        </p>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Product Modal -->
-    <div class="modal fade" id="productModal{{ product.id }}" tabindex="-1">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{{ product.name }}</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
+<!-- Products Grid -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      {% for product in products %}
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="{{ product.image.url }}"
+            class="card-img-top"
+            alt="{{ product.name }}"
+            style="height: 250px; object-fit: cover"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description|truncatewords:20 }}</p>
           </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-6">
-                <img
-                  src="{{ product.image.url }}"
-                  class="img-fluid rounded"
-                  alt="{{ product.name }}"
-                />
-              </div>
-              <div class="col-md-6">
-                <h6 class="mb-3">Description</h6>
-                <p>{{ product.description }}</p>
-                <h6 class="mb-3">Specifications</h6>
-                <p>{{ product.specifications|linebreaks }}</p>
+          <div class="card-footer bg-white">
+            <button
+              class="btn btn-outline-primary w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#productModal{{ product.id }}"
+            >
+              <i class="bi bi-info-circle me-2"></i>View Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Modal -->
+      <div class="modal fade" id="productModal{{ product.id }}" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">
+                <i class="bi bi-box-seam me-2"></i>{{ product.name }}
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <img
+                    src="{{ product.image.url }}"
+                    class="img-fluid rounded"
+                    alt="{{ product.name }}"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <h6 class="mb-3">
+                    <i class="bi bi-file-text me-2"></i>Description
+                  </h6>
+                  <p>{{ product.description }}</p>
+                  <h6 class="mb-3">
+                    <i class="bi bi-list-check me-2"></i>Specifications
+                  </h6>
+                  <p>{{ product.specifications|linebreaks }}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {% empty %}
+      <div class="col-12 text-center py-5">
+        <i class="bi bi-box-seam display-1 text-secondary mb-3"></i>
+        <h3>No Products Available</h3>
+        <p class="text-secondary">Products will be added soon.</p>
+      </div>
+      {% endfor %}
     </div>
-    {% empty %}
-    <div class="col-12 text-center">
-      <p class="lead">No products available at the moment.</p>
-    </div>
-    {% endfor %}
   </div>
-</div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 fw-bold mb-4">
+          <i class="bi bi-chat-dots me-2"></i>Interested in Our Products?
+        </h2>
+        <p class="lead text-secondary mb-4">
+          Contact us to learn more about our products or request a quote.
+        </p>
+        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">
+          <i class="bi bi-envelope me-2 text-white"></i>Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

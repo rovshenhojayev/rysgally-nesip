@@ -1,15 +1,29 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Document, Product
+
+def get_common_context(request):
+    return {
+        'redirect_to': request.get_full_path()
+    }
 
 def home(request):
-    return render(request, 'core/home.html')
+    context = get_common_context(request)
+    return render(request, 'core/home.html', context)
 
 def about(request):
-    return render(request, 'core/about.html')
+    context = get_common_context(request)
+    return render(request, 'core/about.html', context)
 
 def contact(request):
-    return render(request, 'core/contact.html')
+    context = get_common_context(request)
+    return render(request, 'core/contact.html', context)
 
 def products(request):
-    products = Product.objects.all()
-    return render(request, 'core/products.html', {'products': products})
+    context = get_common_context(request)
+    context['products'] = Product.objects.all().order_by('-created_at')
+    return render(request, 'core/products.html', context)
+
+def documents(request):
+    context = get_common_context(request)
+    context['documents'] = Document.objects.all()
+    return render(request, 'core/documents.html', context)
