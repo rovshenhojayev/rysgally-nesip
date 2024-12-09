@@ -1,0 +1,83 @@
+{% extends 'core/base.html' %} {% block title %}Products{% endblock %}
+<p>.</p>
+{% block content %}
+<div class="container py-5">
+  <!-- Brand Logo Section -->
+  <div class="text-center mb-5">
+    <img
+      src="https://rysgallynesip.com.tm/static/assets/images/icons/Cyrag-logo-text-200px.png"
+      alt="Chyrag"
+      class="img-fluid"
+      style="max-width: 500px"
+    />
+  </div>
+
+  <h1 class="text-center mb-5">Our Light Bulb Collection</h1>
+
+  <!-- Products Grid -->
+  <div class="row g-4">
+    {% for product in products %}
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{{ product.image.url }}"
+          class="card-img-top"
+          alt="{{ product.name }}"
+          style="height: 250px; object-fit: cover"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+        </div>
+        <div class="card-footer bg-white">
+          <button
+            class="btn btn-outline-primary w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#productModal{{ product.id }}"
+          >
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="productModal{{ product.id }}" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">{{ product.name }}</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img
+                  src="{{ product.image.url }}"
+                  class="img-fluid rounded"
+                  alt="{{ product.name }}"
+                />
+              </div>
+              <div class="col-md-6">
+                <h6 class="mb-3">Description</h6>
+                <p>{{ product.description }}</p>
+                <h6 class="mb-3">Specifications</h6>
+                <p>{{ product.specifications|linebreaks }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12 text-center">
+      <p class="lead">No products available at the moment.</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,163 @@
+/* Custom styles with color palette */
+:root {
+  --dark-blue: #243642;
+  --teal: #387478;
+  --sage: #629584;
+  --mint: #e2f1e7;
+}
+
+/* Navbar and topbar */
+.navbar,
+.navbar.navbar-light,
+.bg-primary {
+  background-color: var(--teal) !important;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-brand {
+  color: var(--mint) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: white !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--teal) !important;
+  border-color: var(--teal) !important;
+  color: var(--mint) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--dark-blue) !important;
+  border-color: var(--dark-blue) !important;
+}
+
+.btn-outline-primary {
+  color: var(--teal) !important;
+  border-color: var(--teal) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--teal) !important;
+  color: var(--mint) !important;
+}
+
+/* Background colors */
+.bg-light {
+  background-color: var(--mint) !important;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-blue) !important;
+  color: var(--mint) !important;
+}
+
+footer a {
+  color: var(--sage) !important;
+}
+
+footer a:hover {
+  color: var(--mint) !important;
+}
+
+/* Cards */
+.card {
+  background-color: white !important;
+  border: none !important;
+  box-shadow: 0 2px 15px rgba(36, 54, 66, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(36, 54, 66, 0.15) !important;
+}
+
+/* Icons */
+.bi {
+  color: var(--teal) !important;
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--teal) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-blue) !important;
+}
+
+/* Links */
+a {
+  color: var(--teal);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--dark-blue);
+}
+
+/* Custom classes */
+.topbar-link {
+  color: var(--mint) !important;
+}
+
+.social-links a {
+  color: var(--sage) !important;
+}
+
+.social-links a:hover {
+  color: var(--mint) !important;
+}
+
+/* Form elements */
+.form-control:focus {
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 0.2rem rgba(56, 116, 120, 0.25) !important;
+}
+
+/* Global styles */
+body {
+  color: var(--dark-blue);
+  padding-top: 96px;
+  background-color: white;
+}
+
+/* Carousel */
+.carousel-caption {
+  background-color: rgba(36, 54, 66, 0.7);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Section spacing */
+section {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+}
+
+/* Active states */
+.active {
+  color: var(--mint) !important;
+}
+
+/* Topbar specific */
+.bg-primary.text-white {
+  background-color: var(--teal) !important;
+  color: var(--mint) !important;
+}

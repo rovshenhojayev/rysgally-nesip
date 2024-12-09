@@ -1,0 +1,92 @@
+{% extends 'core/base.html' %} {% block title %}About Us{% endblock %}
+<p>.</p>
+{% load static %} {% block content %}
+<!-- Hero Section -->
+<div class="bg-light py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="display-4 mb-4">About Rysgally Nesip</h1>
+        <p class="lead">
+          A leading manufacturer of lighting products in Turkmenistan, serving
+          customers since 2010.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img
+          src="{% static 'core/images/about-us.jpg' %}"
+          class="img-fluid rounded shadow"
+          alt="Our Company"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Our Story -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+        <h2 class="mb-4">Our Story</h2>
+        <p class="lead">
+          Rysgally Nesip is a leading manufacturer of lighting products in
+          Turkmenistan. Our company specializes in producing high-quality LED
+          lamps and lighting fixtures.
+        </p>
+        <p>
+          We are committed to providing energy-efficient lighting solutions that
+          meet international standards. Our products are designed to enhance
+          both residential and commercial spaces while contributing to a
+          sustainable future.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Values -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Values</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-lightbulb display-4 text-primary mb-3"></i>
+            <h3>Innovation</h3>
+            <p>
+              Leading the way in lighting technology with modern manufacturing
+              facilities and quality control.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-heart display-4 text-primary mb-3"></i>
+            <h3>Quality</h3>
+            <p>
+              Committed to producing high-quality products that meet
+              international standards and customer expectations.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-globe display-4 text-primary mb-3"></i>
+            <h3>Sustainability</h3>
+            <p>
+              Dedicated to energy efficiency and environmental responsibility in
+              all our products.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

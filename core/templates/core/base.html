@@ -1,0 +1,365 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Rysgally Nesip - {% block title %}{% endblock %}</title>
+    <meta
+      name="title"
+      content="Rysgally Nesip - Leading Lighting Manufacturer in Turkmenistan"
+    />
+    <meta
+      name="description"
+      content="Rysgally Nesip is Turkmenistan's premier manufacturer of high-quality LED lighting solutions. Visit our showroom or connect with us on LinkedIn, Facebook, Instagram, and WhatsApp for energy-efficient lighting solutions."
+    />
+    <meta
+      name="keywords"
+      content="Rysgally Nesip, LED lights, lighting manufacturer, Turkmenistan, energy efficient lighting, commercial lighting, residential lighting, LED bulbs, Balkanabat lighting"
+    />
+
+    <!-- Open Graph / Facebook / Instagram -->
+    <meta property="og:type" content="business.business" />
+    <meta property="og:url" content="https://rysgallynesip.com.tm/" />
+    <meta
+      property="og:title"
+      content="Rysgally Nesip - Premium LED Lighting Solutions"
+    />
+    <meta
+      property="og:description"
+      content="Discover our range of energy-efficient LED lighting solutions. Connect with us on social media for the latest products and innovations in lighting technology."
+    />
+    <meta property="og:image" content="{% static 'core/images/logo.svg' %}" />
+    <meta
+      property="business:contact_data:street_address"
+      content="House 48, Advanced Industrial Zone of the PI and ET"
+    />
+    <meta property="business:contact_data:locality" content="Balkanabat" />
+    <meta
+      property="business:contact_data:country_name"
+      content="Turkmenistan"
+    />
+    <meta
+      property="business:contact_data:email"
+      content="info@rysgallynesip.com.tm"
+    />
+    <meta
+      property="business:contact_data:phone_number"
+      content="+993 222 79148"
+    />
+
+    <!-- LinkedIn -->
+    <meta property="linkedin:owner" content="Rysgally Nesip" />
+    <meta property="linkedin:industry" content="Lighting Manufacturing" />
+    <meta property="linkedin:company_size" content="51-200" />
+
+    <!-- Additional SEO Tags -->
+    <meta name="author" content="Rysgally Nesip" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="geo.region" content="TM" />
+    <meta name="geo.placename" content="Balkanabat" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://rysgallynesip.com.tm{{ request.path }}"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{% static 'core/images/logo.svg' %}"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Rysgally Nesip",
+        "url": "https://rysgallynesip.com.tm",
+        "logo": "{% static 'core/images/logo.svg' %}",
+        "description": "Leading manufacturer of LED lighting solutions in Turkmenistan",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "House 48, Advanced Industrial Zone of the PI and ET",
+          "addressLocality": "Balkanabat",
+          "addressRegion": "Balkan velayat",
+          "addressCountry": "Turkmenistan"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+993 222 79148",
+          "contactType": "customer service",
+          "email": "info@rysgallynesip.com.tm",
+          "availableLanguage": ["en", "tk", "ru"]
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/rysgally-nesip",
+          "https://www.facebook.com/rysgallynesip",
+          "https://www.instagram.com/rysgallynesip",
+          "https://wa.me/99322279148"
+        ]
+      }
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS - Make sure this comes after Bootstrap to override -->
+    <link
+      rel="stylesheet"
+      href="{% static 'core/css/style.css' %}"
+      type="text/css"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://rysgallynesip.com.tm/static/assets/images/icons/Cyrag-logo-text-200px.png"
+    />
+  </head>
+  <body>
+    <!-- Fixed Wrapper -->
+    <div class="fixed-top">
+      <!-- Topbar -->
+      <div class="bg-primary text-white py-1 small">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="d-flex align-items-center">
+                <a
+                  href="tel:+99322279148"
+                  class="text-white text-decoration-none me-3 topbar-link"
+                >
+                  <i class="bi bi-telephone-fill me-1"></i>+993 222 79148
+                </a>
+                <a
+                  href="mailto:info@rysgallynesip.com.tm"
+                  class="text-white text-decoration-none topbar-link"
+                >
+                  <i class="bi bi-envelope-fill me-1"></i
+                  >info@rysgallynesip.com.tm
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex justify-content-end align-items-center">
+                <a
+                  href="#"
+                  class="text-white text-decoration-none topbar-link active"
+                >
+                  <img
+                    src="{% static 'core/images/flags/tm.png' %}"
+                    alt="TM"
+                    class="me-1"
+                    style="width: 16px"
+                  />TM
+                </a>
+                <span class="mx-2 text-white-50">•</span>
+                <a
+                  href="#"
+                  class="text-white text-decoration-none topbar-link disabled"
+                >
+                  <img
+                    src="{% static 'core/images/flags/tr.png' %}"
+                    alt="TR"
+                    class="me-1"
+                    style="width: 16px"
+                  />TR
+                </a>
+                <span class="mx-2 text-white-50">•</span>
+                <a
+                  href="#"
+                  class="text-white text-decoration-none topbar-link disabled"
+                >
+                  <img
+                    src="{% static 'core/images/flags/gb.png' %}"
+                    alt="EN"
+                    class="me-1"
+                    style="width: 16px"
+                  />EN
+                </a>
+                <span class="mx-2 text-white-50">•</span>
+                <a
+                  href="#"
+                  class="text-white text-decoration-none topbar-link disabled"
+                >
+                  <img
+                    src="{% static 'core/images/flags/ru.png' %}"
+                    alt="RU"
+                    class="me-1"
+                    style="width: 16px"
+                  />RU
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center"
+            href="{% url 'home' %}"
+          >
+            <img
+              src="{% static 'core/images/logo.svg' %}"
+              alt="Rysgally Nesip Logo"
+              height="40"
+              class="me-2"
+            />
+            Rysgally Nesip
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link {% if request.path == '/' %}active{% endif %}"
+                  href="{% url 'home' %}"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link {% if request.path == '/products/' %}active{% endif %}"
+                  href="{% url 'products' %}"
+                  >Products</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link {% if request.path == '/about/' %}active{% endif %}"
+                  href="{% url 'about' %}"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link {% if request.path == '/contact/' %}active{% endif %}"
+                  href="{% url 'contact' %}"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main Content with Padding -->
+    <main class="content-wrapper">{% block content %}{% endblock %}</main>
+
+    <footer class="bg-light mt-5 py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="d-flex align-items-center mb-3">
+              <img
+                src="{% static 'core/images/logo.svg' %}"
+                alt="Rysgally Nesip Logo"
+                height="30"
+                class="me-2"
+              />
+              <h5 class="mb-0">Rysgally Nesip</h5>
+            </div>
+            <p>Illuminating Turkmenistan with quality and innovation.</p>
+            <!-- Social Media Links -->
+            <div class="social-links mt-3">
+              <a
+                href="https://www.linkedin.com/company/rysgally-nesip"
+                target="_blank"
+                class="me-3 text-primary"
+              >
+                <i class="bi bi-linkedin fs-4"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/rysgallynesip"
+                target="_blank"
+                class="me-3 text-primary"
+              >
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/rysgallynesip"
+                target="_blank"
+                class="me-3 text-primary"
+              >
+                <i class="bi bi-instagram fs-4"></i>
+              </a>
+              <a
+                href="https://wa.me/99322279148"
+                target="_blank"
+                class="text-primary"
+              >
+                <i class="bi bi-whatsapp fs-4"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="{% url 'home' %}" class="text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="{% url 'products' %}" class="text-decoration-none"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'about' %}" class="text-decoration-none"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'contact' %}" class="text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Info</h5>
+            <p>
+              <i class="bi bi-geo-alt"></i> House 48, Advanced Industrial Zone
+              of the PI and ET,<br />
+              Ashgabat-Balkanabat-Turkmenbashi highway,<br />
+              Jebel village, Balkanabat, Balkan velayat<br />
+              <i class="bi bi-envelope"></i> info@rysgallynesip.com.tm<br />
+              <i class="bi bi-telephone"></i> +993 222 79148<br />
+              <i class="bi bi-clock"></i> Monday - Saturday<br />
+              09:00 - 13:00 / 14:00 - 18:00
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>
