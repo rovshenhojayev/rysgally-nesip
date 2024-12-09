@@ -44,4 +44,4 @@ ENV/
 .LSOverride
 
 # Thumbnails
-._*
+._*staticfiles/
