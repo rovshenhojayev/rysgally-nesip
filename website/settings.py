@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s%g=v)@f%5mccmf*t-i9d$x9e49o)f=#9lkt-cmcxhyzhfr9k3'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-s%g=v)@f%5mccmf*t-i9d$x9e49o)f=#9lkt-cmcxhyzhfr9k3')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rysgallynesip.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -109,25 +110,30 @@ LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = False
-USE_L10N = False
+USE_I18N = True
+USE_L10N = True
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'core/static',
 ]
 
 # Media files
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Security Settings
+SECURE_SSL_REDIRECT = False  # Set to True if you have SSL certificate
+SESSION_COOKIE_SECURE = False  # Set to True if you have SSL certificate
+CSRF_COOKIE_SECURE = False  # Set to True if you have SSL certificate
