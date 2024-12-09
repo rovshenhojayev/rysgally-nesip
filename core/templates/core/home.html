@@ -1,6 +1,6 @@
-{% extends 'core/base.html' %} {% load static %} Home
+{% extends 'core/base.html' %} {% load static %}
 <p>.</p>
-{% block content %}
+{% block title %} Home {% endblock %} {% block content %}
 <!-- Hero Carousel Section -->
 <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -121,16 +121,282 @@
   </div>
 </section>
 
-<!-- Call to Action -->
+<!-- Featured Products Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6">
+        <h2 class="display-5 fw-bold mb-4">Our Featured Products</h2>
+        <p class="lead text-secondary mb-4">
+          Discover our most popular LED lighting solutions that combine
+          innovation, efficiency, and style.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <a href="{% url 'products' %}" class="btn btn-outline-primary"
+          >View All Products</a
+        >
+      </div>
+    </div>
+    <div class="row g-4">
+      <!-- Product Card 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 product-card">
+          <div class="card-img-top position-relative">
+            <img
+              src="{% static 'core/images/products/product-1.jpg' %}"
+              alt="LED Panel Light"
+              class="img-fluid"
+            />
+            <span class="badge bg-primary position-absolute top-0 end-0 m-3"
+              >New</span
+            >
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">LED Panel Light</h5>
+            <p class="card-text text-secondary">
+              Ultra-thin design with uniform light distribution. Perfect for
+              office spaces.
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-primary fw-bold">36W / 48W</span>
+              <a
+                href="{% url 'products' %}"
+                class="btn btn-sm btn-outline-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 product-card">
+          <div class="card-img-top">
+            <img
+              src="{% static 'core/images/products/product-2.jpg' %}"
+              alt="LED Street Light"
+              class="img-fluid"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">LED Street Light</h5>
+            <p class="card-text text-secondary">
+              High-performance outdoor lighting with advanced heat dissipation.
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-primary fw-bold">100W / 150W</span>
+              <a
+                href="{% url 'products' %}"
+                class="btn btn-sm btn-outline-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 product-card">
+          <div class="card-img-top">
+            <img
+              src="{% static 'core/images/products/product-3.jpg' %}"
+              alt="LED Flood Light"
+              class="img-fluid"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">LED Flood Light</h5>
+            <p class="card-text text-secondary">
+              Powerful illumination for large areas and outdoor spaces.
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-primary fw-bold">50W / 100W</span>
+              <a
+                href="{% url 'products' %}"
+                class="btn btn-sm btn-outline-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 product-card">
+          <div class="card-img-top position-relative">
+            <img
+              src="{% static 'core/images/products/product-4.jpg' %}"
+              alt="Smart LED Bulb"
+              class="img-fluid"
+            />
+            <span class="badge bg-success position-absolute top-0 end-0 m-3"
+              >Smart</span
+            >
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Smart LED Bulb</h5>
+            <p class="card-text text-secondary">
+              WiFi-enabled smart bulb with millions of colors and automation.
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-primary fw-bold">9W / 12W</span>
+              <a
+                href="{% url 'products' %}"
+                class="btn btn-sm btn-outline-primary"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
 <section class="bg-light py-5">
-  <div class="container text-center">
-    <h2>Ready to Upgrade Your Lighting?</h2>
-    <p class="lead mb-4">
-      Explore our wide range of innovative lighting solutions
-    </p>
-    <a href="{% url 'products' %}" class="btn btn-primary btn-lg"
-      >View Our Products</a
-    >
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-6 text-center">
+        <h2 class="display-5 fw-bold mb-4">Why Choose Us</h2>
+        <p class="lead text-secondary">
+          We combine innovation with reliability to deliver the best lighting
+          solutions.
+        </p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 bg-transparent">
+          <div class="card-body text-center">
+            <div class="mb-4">
+              <i class="bi bi-award text-primary display-4"></i>
+            </div>
+            <h4>Quality Assurance</h4>
+            <p class="text-secondary">
+              Every product undergoes rigorous testing to ensure the highest
+              quality standards.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 bg-transparent">
+          <div class="card-body text-center">
+            <div class="mb-4">
+              <i class="bi bi-gear-wide-connected text-primary display-4"></i>
+            </div>
+            <h4>Advanced Technology</h4>
+            <p class="text-secondary">
+              We use the latest LED technology to provide efficient and reliable
+              lighting solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 bg-transparent">
+          <div class="card-body text-center">
+            <div class="mb-4">
+              <i class="bi bi-headset text-primary display-4"></i>
+            </div>
+            <h4>Expert Support</h4>
+            <p class="text-secondary">
+              Our team of experts is always ready to help you with technical
+              support and advice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3">
+        <div class="p-4">
+          <h2 class="display-4 fw-bold text-primary mb-2">500+</h2>
+          <p class="text-secondary mb-0">Products Installed</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-4">
+          <h2 class="display-4 fw-bold text-primary mb-2">95%</h2>
+          <p class="text-secondary mb-0">Customer Satisfaction</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-4">
+          <h2 class="display-4 fw-bold text-primary mb-2">10+</h2>
+          <p class="text-secondary mb-0">Years Experience</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="p-4">
+          <h2 class="display-4 fw-bold text-primary mb-2">24/7</h2>
+          <p class="text-secondary mb-0">Customer Support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Download Catalog Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="display-5 fw-bold mb-4">Download Our Product Catalog</h2>
+        <p class="lead text-secondary mb-4">
+          Get detailed information about our products, specifications, and
+          company profile in our comprehensive catalog.
+        </p>
+        <a
+          href="{% static 'core/documents/company-catalog.pdf' %}"
+          class="btn btn-primary btn-lg"
+          target="_blank"
+        >
+          <i class="bi bi-file-earmark-pdf me-2"></i>Download PDF Catalog
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <div class="position-relative">
+          <div class="card catalog-preview-card">
+            <div class="card-body p-4 text-center">
+              <i class="bi bi-file-earmark-pdf display-1 text-primary mb-3"></i>
+              <h4 class="mb-3">Company Catalog</h4>
+              <p class="text-secondary mb-0">
+                Complete product specifications, company information, and more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 class="display-5 fw-bold mb-3">Ready to Upgrade Your Lighting?</h2>
+        <p class="lead mb-lg-0">
+          Contact us today for a free consultation and find the perfect lighting
+          solution for your needs.
+        </p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a href="{% url 'contact' %}" class="btn btn-light btn-lg"
+          >Contact Us</a
+        >
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}

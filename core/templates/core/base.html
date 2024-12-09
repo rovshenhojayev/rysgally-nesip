@@ -214,17 +214,13 @@
       <!-- Main Navigation -->
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a
-            class="navbar-brand d-flex align-items-center"
-            href="{% url 'home' %}"
-          >
+          <a class="navbar-brand" href="{% url 'home' %}">
             <img
               src="{% static 'core/images/logo.svg' %}"
               alt="Rysgally Nesip Logo"
               height="40"
-              class="me-2"
             />
-            Rysgally Nesip
+            <span class="brand-text">Rysgally Nesip</span>
           </a>
           <button
             class="navbar-toggler"

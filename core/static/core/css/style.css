@@ -351,3 +351,168 @@ a:hover {
     bottom: 15%;
   }
 }
+
+/* Product Cards */
+.product-card {
+  transition: all 0.3s ease;
+  border: none !important;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-card .card-img-top {
+  height: 200px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.product-card .card-img-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .card-img-top img {
+  transform: scale(1.1);
+}
+
+.product-card .card-body {
+  padding: 1.5rem;
+}
+
+.product-card .card-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.product-card .badge {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* Stats Section */
+.display-4 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Why Choose Us Cards */
+.card.bg-transparent {
+  transition: transform 0.3s ease;
+}
+
+.card.bg-transparent:hover {
+  transform: translateY(-5px);
+}
+
+.card.bg-transparent .bi {
+  transition: transform 0.3s ease;
+}
+
+.card.bg-transparent:hover .bi {
+  transform: scale(1.1);
+}
+
+/* Call to Action Section */
+.bg-primary.text-white {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-primary.text-white::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+.btn-light {
+  background-color: var(--white);
+  border: none;
+  color: var(--green-accent);
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .product-card .card-img-top {
+    height: 180px;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+}
+
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
+
+/* Brand Name Styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  margin: 0;
+  background: linear-gradient(45deg, var(--green-accent), var(--green-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Catalog Preview Card */
+.catalog-preview-card {
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.catalog-preview-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.catalog-preview-card .bi-file-earmark-pdf {
+  color: var(--green-accent);
+  opacity: 0.9;
+}
+
+/* Download Button Animation */
+.btn-primary .bi-download,
+.btn-primary .bi-file-earmark-pdf {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .bi-download,
+.btn-primary:hover .bi-file-earmark-pdf {
+  transform: translateY(2px);
+}
