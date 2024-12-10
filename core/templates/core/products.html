@@ -8,11 +8,11 @@
 <section class="bg-light py-5">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
+      <div class="col-lg-8 text-center reveal">
         <img
           src="{% static 'core/images/Cyrag-logo-text-200px.png' %}"
           alt="Cyrag Logo"
-          class="img-fluid mb-4"
+          class="img-fluid mb-4 reveal-scale"
           style="max-width: 500px"
         />
         <h1 class="display-4 fw-bold mb-4">Our Products</h1>
@@ -31,7 +31,9 @@
     <div class="row g-4">
       {% for product in products %}
       <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
+        <div
+          class="card h-100 shadow-sm reveal-scale delay-{{ forloop.counter }}"
+        >
           <img
             src="{{ product.image.url }}"
             class="card-img-top"
@@ -93,7 +95,7 @@
         </div>
       </div>
       {% empty %}
-      <div class="col-12 text-center py-5">
+      <div class="col-12 text-center py-5 reveal">
         <i class="bi bi-box-seam display-1 text-secondary mb-3"></i>
         <h3>No Products Available</h3>
         <p class="text-secondary">Products will be added soon.</p>
@@ -107,14 +109,17 @@
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
+      <div class="col-lg-8 text-center reveal">
         <h2 class="display-5 fw-bold mb-4">
           <i class="bi bi-chat-dots me-2"></i>Interested in Our Products?
         </h2>
         <p class="lead text-secondary mb-4">
           Contact us to learn more about our products or request a quote.
         </p>
-        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">
+        <a
+          href="{% url 'contact' %}"
+          class="btn btn-primary btn-lg reveal-scale delay-1"
+        >
           <i class="bi bi-envelope me-2 text-white"></i>Contact Us
         </a>
       </div>
