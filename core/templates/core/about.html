@@ -1,115 +1,117 @@
-{% extends 'core/base.html' %} {% load static %} {% load i18n %}
+{% extends 'core/base.html' %} {% load static %}
 <p>.</p>
-{% block title %}{% trans "About Us" %}{% endblock %}
+{% block title %}About{%endblock %}
 <p>.</p>
 {% block content %}
 <!-- Hero Section -->
 <section class="bg-light py-5">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h1 class="display-4 fw-bold mb-4">About Rysgally Nesip</h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h1 class="display-4 fw-bold mb-4">About Us</h1>
         <p class="lead text-secondary">
-          Leading the way in sustainable lighting solutions for Turkmenistan's
-          bright future.
+          Leading the way in LED lighting innovation and manufacturing
         </p>
-      </div>
-      <div class="col-lg-6">
-        <img
-          src="{% static 'core/images/about-us.jpg' %}"
-          alt="Our Factory"
-          class="img-fluid rounded-3 shadow"
-        />
       </div>
     </div>
   </div>
 </section>
 
-<!-- Introduction Section -->
+<!-- Company Overview -->
 <section class="py-5">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="text-center mb-5">
-          <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
-          <p class="lead text-secondary">
-            Based on the fundamental principles set forth by our esteemed
-            President, we strive to produce environmentally friendly products
-            and offer them to the public at affordable prices.
-          </p>
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img
+          src="{% static 'core/images/about-us.jpg' %}"
+          alt="Company Overview"
+          class="img-fluid rounded shadow-lg"
+        />
+      </div>
+      <div class="col-lg-6">
+        <h2 class="display-5 fw-bold mb-4">Company Overview</h2>
+        <p class="lead text-secondary mb-4">
+          Rysgally Nesip is a leading manufacturer of LED lighting solutions in
+          Turkmenistan, dedicated to providing innovative and energy-efficient
+          lighting products.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-building text-primary display-5 me-3"></i>
+              <div>
+                <h4>Modern Facility</h4>
+                <p>
+                  State-of-the-art manufacturing facility with advanced
+                  technology
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-people text-primary display-5 me-3"></i>
+              <div>
+                <h4>Expert Team</h4>
+                <p>
+                  Highly skilled professionals with extensive industry
+                  experience
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Production Capacity -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 fw-bold mb-4">Production Capacity</h2>
+        <p class="lead text-secondary">
+          Our advanced manufacturing facility is equipped with cutting-edge
+          technology to deliver high-quality LED lighting solutions.
+        </p>
       </div>
     </div>
     <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="h4 mb-3">Our Vision</h3>
-            <p class="text-secondary mb-0">
-              In line with the 2018–2024 socio-economic development program of
-              Turkmenistan's President, we aim to establish state-of-the-art
-              workshops for producing electric lamps using advanced
-              technological equipment.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card h-100 border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="h4 mb-3">Market Leadership</h3>
-            <p class="text-secondary mb-0">
-              During the 'Era of Happiness in the Powerful State', we're
-              implementing market reforms and contributing to Turkmenistan's
-              unique model of a socially oriented market economy.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Company Stats Section -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <h2 class="display-5 fw-bold text-center mb-5">Company Overview</h2>
-    <div class="row g-4 text-center">
-      <div class="col-md-3">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <i class="bi bi-people-fill display-4 text-primary mb-3"></i>
-            <h3 class="h4 mb-2">40+</h3>
-            <p class="text-secondary mb-0">Employees</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-4">
+      <div class="col-md-4">
+        <div class="card border-0 bg-white h-100">
+          <div class="card-body text-center p-4">
             <i
-              class="bi bi-lightning-charge-fill display-4 text-primary mb-3"
+              class="bi bi-gear-wide-connected text-primary display-4 mb-3"
             ></i>
-            <h3 class="h4 mb-2">388,800</h3>
-            <p class="text-secondary mb-0">Annual Production Units</p>
+            <h4>Advanced Equipment</h4>
+            <p class="text-secondary">
+              Modern production lines with automated quality control systems
+            </p>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <i class="bi bi-graph-up-arrow display-4 text-primary mb-3"></i>
-            <h3 class="h4 mb-2">11.5M+</h3>
-            <p class="text-secondary mb-0">Annual Revenue (Manat)</p>
+      <div class="col-md-4">
+        <div class="card border-0 bg-white h-100">
+          <div class="card-body text-center p-4">
+            <i class="bi bi-speedometer2 text-primary display-4 mb-3"></i>
+            <h4>Efficient Production</h4>
+            <p class="text-secondary">
+              Optimized manufacturing processes for consistent quality and
+              timely delivery
+            </p>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <i class="bi bi-award-fill display-4 text-primary mb-3"></i>
-            <h3 class="h4 mb-2">2.5M+</h3>
-            <p class="text-secondary mb-0">Annual Profit (Manat)</p>
+      <div class="col-md-4">
+        <div class="card border-0 bg-white h-100">
+          <div class="card-body text-center p-4">
+            <i class="bi bi-shield-check text-primary display-4 mb-3"></i>
+            <h4>Quality Assurance</h4>
+            <p class="text-secondary">
+              Rigorous testing and quality control at every production stage
+            </p>
           </div>
         </div>
       </div>
@@ -117,82 +119,77 @@
   </div>
 </section>
 
-<!-- Production Details -->
+<!-- Quality Standards -->
 <section class="py-5">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h2 class="display-5 fw-bold mb-4">Production Capacity</h2>
-        <div class="mb-4">
-          <h3 class="h5 mb-3">Investment in Excellence</h3>
-          <p class="text-secondary">
-            Our facility represents an investment of 4,316,000.00 manat in
-            construction and equipment, demonstrating our commitment to quality
-            production.
-          </p>
-        </div>
-        <div class="mb-4">
-          <h3 class="h5 mb-3">Quality Assurance</h3>
-          <p class="text-secondary">
-            We maintain rigorous quality standards throughout our production
-            process while ensuring our products remain accessible and affordable
-            for all our customers.
-          </p>
-        </div>
+      <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+        <img
+          src="{% static 'core/images/about-us-2.jpg' %}"
+          alt="Quality Standards"
+          class="img-fluid rounded shadow-lg"
+        />
       </div>
-      <div class="col-lg-6">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="h4 mb-4">Annual Production Statistics</h3>
-            <div class="d-flex justify-content-between mb-3">
-              <span class="text-secondary">Production Capacity</span>
-              <span class="fw-bold">388,800 units</span>
-            </div>
-            <div class="d-flex justify-content-between mb-3">
-              <span class="text-secondary">Total Revenue</span>
-              <span class="fw-bold">11,594,016 manat</span>
-            </div>
-            <div class="d-flex justify-content-between mb-3">
-              <span class="text-secondary">Production Cost</span>
-              <span class="fw-bold">9,030,486 manat</span>
-            </div>
-            <div class="d-flex justify-content-between">
-              <span class="text-secondary">Annual Profit</span>
-              <span class="fw-bold text-primary">2,563,530 manat</span>
-            </div>
-          </div>
-        </div>
+      <div class="col-lg-6 order-lg-1">
+        <h2 class="display-5 fw-bold mb-4">Quality Standards</h2>
+        <p class="lead text-secondary mb-4">
+          We maintain the highest quality standards throughout our production
+          process.
+        </p>
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+            International quality certifications
+          </li>
+          <li class="mb-3">
+            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+            Rigorous testing procedures
+          </li>
+          <li class="mb-3">
+            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+            Advanced quality control systems
+          </li>
+          <li class="mb-3">
+            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+            Regular quality audits
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Team Section -->
-<section class="py-5 bg-light">
+<!-- Mission & Vision -->
+<section class="bg-light py-5">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="display-5 fw-bold">Our Team</h2>
-      <p class="lead text-secondary">
-        With 40 dedicated employees, we're committed to excellence in every
-        aspect of our operation.
-      </p>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card border-0 shadow-sm">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card border-0 bg-white h-100">
           <div class="card-body p-4">
-            <div class="text-center">
-              <i class="bi bi-people-fill display-1 text-primary mb-4"></i>
-              <h3 class="h4 mb-3">Join Our Team</h3>
-              <p class="text-secondary mb-4">
-                We're always looking for talented individuals to join our
-                growing team. With competitive salaries and a focus on employee
-                development, we offer excellent opportunities for growth.
-              </p>
-              <a href="{% url 'contact' %}" class="btn btn-primary"
-                >Contact Us</a
-              >
+            <div class="text-center mb-4">
+              <i class="bi bi-bullseye text-primary display-4"></i>
             </div>
+            <h3 class="text-center mb-4">Our Mission</h3>
+            <p class="text-secondary">
+              To provide innovative, energy-efficient lighting solutions that
+              enhance the quality of life while contributing to a sustainable
+              future.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card border-0 bg-white h-100">
+          <div class="card-body p-4">
+            <div class="text-center mb-4">
+              <i class="bi bi-eye text-primary display-4"></i>
+            </div>
+            <h3 class="text-center mb-4">Our Vision</h3>
+            <p class="text-secondary">
+              To be the leading provider of sustainable lighting solutions in
+              Turkmenistan, setting industry standards for quality and
+              innovation.
+            </p>
           </div>
         </div>
       </div>
