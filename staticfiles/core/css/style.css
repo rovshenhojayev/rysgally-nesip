@@ -1,0 +1,858 @@
+/* Custom styles with color palette */
+:root {
+  --green-accent: #4caf50;
+  --green-light: #a5d6a7;
+  --green-dark: #2e7d32;
+  --white: #ffffff;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-800: #343a40;
+  --text-primary: #2c3e50;
+  --text-secondary: #6c757d;
+  --navbar-bg: #f5f7f9;
+  --topbar-bg: #d8dde4;
+}
+
+/* Typography */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+body {
+  color: var(--text-primary);
+  padding-top: 96px;
+  background: var(--white);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Navbar modern */
+.navbar,
+.navbar.navbar-light,
+.bg-primary {
+  background-color: var(--navbar-bg) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-brand {
+  color: var(--gray-800) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.navbar-light .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--green-accent);
+  transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after,
+.navbar-light .navbar-nav .nav-link.active::after {
+  width: 80%;
+  left: 10%;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: transparent;
+  padding: 0.5rem;
+}
+
+.navbar-light .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Modern Buttons */
+.btn {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--green-accent) !important;
+  border: none !important;
+  color: var(--white) !important;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.25);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--green-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-outline-primary {
+  color: var(--green-accent) !important;
+  border: 1.5px solid var(--green-accent) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--green-accent) !important;
+  color: var(--white) !important;
+  transform: translateY(-1px);
+}
+
+/* Cards modern */
+.card {
+  background-color: var(--white) !important;
+  border: none !important;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Section styling */
+section {
+  background-color: var(--white);
+  padding: 80px 0;
+}
+
+section:nth-child(even) {
+  background-color: var(--gray-100);
+}
+
+/* Footer modern */
+footer {
+  background-color: var(--gray-100) !important;
+  color: var(--text-primary) !important;
+  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+footer a {
+  color: var(--green-accent) !important;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: var(--green-dark) !important;
+  text-decoration: none;
+}
+
+/* Text styling */
+.text-primary {
+  color: var(--green-accent) !important;
+}
+
+/* Links */
+a {
+  color: var(--green-accent);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--green-dark);
+  text-decoration: none;
+}
+
+/* Form elements */
+.form-control {
+  border: 1.5px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--green-accent) !important;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1) !important;
+}
+
+/* Custom utility classes */
+.text-gradient {
+  background: linear-gradient(120deg, var(--green-accent), var(--green-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-subtle {
+  background: linear-gradient(135deg, var(--gray-100), var(--white));
+}
+
+/* Carousel modern */
+.carousel-caption {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  color: var(--text-primary);
+}
+
+/* Icons */
+.bi {
+  color: var(--green-accent) !important;
+}
+
+/* Social links */
+.social-links a {
+  color: var(--text-secondary) !important;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--green-accent) !important;
+  transform: translateY(-2px);
+}
+
+/* Topbar styling */
+.bg-primary.text-white {
+  background-color: var(--topbar-bg) !important;
+  color: var(--text-primary) !important;
+  font-size: 0.9rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.topbar-link {
+  color: var(--text-primary) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+
+.topbar-link:hover {
+  color: var(--green-accent) !important;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Social links in topbar */
+.social-links a {
+  color: var(--text-secondary) !important;
+  margin: 0 0.5rem;
+  padding: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--green-accent) !important;
+  transform: translateY(-1px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+/* Language selector styling */
+.text-white-50.mx-2 {
+  color: #000000 !important;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: bold;
+  opacity: 1;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
+/* Hero Carousel */
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+.carousel-caption {
+  z-index: 2;
+  text-align: left;
+  left: 10%;
+  right: 10%;
+  bottom: 20%;
+  max-width: 600px;
+}
+
+.carousel-caption h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption .lead {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-indicators {
+  bottom: 40px;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-indicators button.active {
+  background-color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-caption .lead {
+    font-size: 1.1rem;
+  }
+
+  .carousel-caption {
+    bottom: 15%;
+  }
+}
+
+/* Product Cards */
+.product-card {
+  transition: all 0.3s ease;
+  border: none !important;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-card .card-img-top {
+  height: 200px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.product-card .card-img-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .card-img-top img {
+  transform: scale(1.1);
+}
+
+.product-card .card-body {
+  padding: 1.5rem;
+}
+
+.product-card .card-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.product-card .badge {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* Stats Section */
+.display-4 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Why Choose Us Cards */
+.card.bg-transparent {
+  transition: transform 0.3s ease;
+}
+
+.card.bg-transparent:hover {
+  transform: translateY(-5px);
+}
+
+.card.bg-transparent .bi {
+  transition: transform 0.3s ease;
+}
+
+.card.bg-transparent:hover .bi {
+  transform: scale(1.1);
+}
+
+/* Call to Action Section */
+.bg-primary.text-white {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-primary.text-white::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+.btn-light {
+  background-color: var(--white);
+  border: none;
+  color: var(--green-accent);
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .product-card .card-img-top {
+    height: 180px;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+}
+
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
+
+/* Brand Name Styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  margin-left: 0.5rem;
+  background: linear-gradient(45deg, #0d47a1, #1976d2, #2196f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Catalog Preview Card */
+.catalog-preview-card {
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.catalog-preview-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.catalog-preview-card .bi-file-earmark-pdf {
+  color: var(--green-accent);
+  opacity: 0.9;
+}
+
+/* Download Button Animation */
+.btn-primary .bi-download,
+.btn-primary .bi-file-earmark-pdf {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .bi-download,
+.btn-primary:hover .bi-file-earmark-pdf {
+  transform: translateY(2px);
+}
+
+/* About Page Styling */
+.display-4,
+.display-5 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.card.border-0.shadow-sm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.border-0.shadow-sm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.text-secondary {
+  color: #6c757d !important;
+}
+
+.bi {
+  line-height: 1;
+}
+
+/* Stats Cards */
+.card .display-4 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Production Details */
+.d-flex.justify-content-between {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.d-flex.justify-content-between:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+}
+
+/* Document Cards */
+.document-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.document-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.document-card .card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.document-card .card-body {
+  padding: 1.5rem;
+}
+
+.document-card .card-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* Document Carousel */
+#documentCarousel .carousel-item {
+  padding: 2rem 0;
+}
+
+#documentCarousel .carousel-control-prev,
+#documentCarousel .carousel-control-next {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--green-accent);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+
+#documentCarousel .carousel-control-prev {
+  left: 1rem;
+}
+
+#documentCarousel .carousel-control-next {
+  right: 1rem;
+}
+
+#documentCarousel .carousel-control-prev:hover,
+#documentCarousel .carousel-control-next:hover {
+  opacity: 1;
+}
+
+#documentCarousel .carousel-indicators {
+  bottom: 0;
+}
+
+#documentCarousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--green-accent);
+  opacity: 0.5;
+  margin: 0 5px;
+}
+
+#documentCarousel .carousel-indicators button.active {
+  opacity: 1;
+}
+
+/* Document Grid Responsive */
+@media (max-width: 768px) {
+  .document-card .card-img-top {
+    height: 200px;
+  }
+
+  #documentCarousel .carousel-control-prev,
+  #documentCarousel .carousel-control-next {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Logo Text Gradient */
+.brand-text {
+  background: linear-gradient(45deg, #0d47a1, #1976d2, #2196f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Certification Showcase Styles */
+.certification-showcase {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.certification-showcase:hover {
+  transform: translateY(-5px);
+}
+
+.certification-image {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.certification-image:hover {
+  opacity: 0.9;
+}
+
+.carousel-navigation {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(var(--bs-primary-rgb), 0.9);
+  color: white;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.carousel-nav-btn:hover {
+  background: var(--bs-primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn.prev {
+  left: -20px;
+}
+
+.carousel-nav-btn.next {
+  right: -20px;
+}
+
+/* Modal Styles */
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.modal-header {
+  background: none;
+}
+
+/* Certification Card Responsive */
+@media (max-width: 768px) {
+  .certification-showcase {
+    margin: 0 20px;
+  }
+
+  .carousel-nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .carousel-nav-btn.prev {
+    left: 0;
+  }
+
+  .carousel-nav-btn.next {
+    right: 0;
+  }
+}
+
+/* Document Page Styles */
+.certification-card {
+  transition: transform 0.3s ease;
+  height: 100%;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.certification-card .card-body {
+  padding: 1.5rem;
+}
+
+.certification-card .doc-image {
+  height: 100px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.certification-card .doc-image:hover {
+  opacity: 0.8;
+}
+
+.certification-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.certification-card .card-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Document Modal Styles */
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background: none;
+  border-bottom: none;
+  padding: 1.5rem 1.5rem 1rem;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-body img {
+  max-height: 80vh;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Catalog Preview Card */
+.catalog-preview-card {
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background: #fff;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .certification-card .doc-image {
+    height: 80px;
+  }
+
+  .certification-card .card-title {
+    font-size: 1rem;
+  }
+
+  .certification-card .card-text {
+    font-size: 0.85rem;
+  }
+}

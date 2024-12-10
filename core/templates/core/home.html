@@ -128,128 +128,96 @@
       <div class="col-lg-6">
         <h2 class="display-5 fw-bold mb-4">Our Featured Products</h2>
         <p class="lead text-secondary mb-4">
-          Discover our most popular LED lighting solutions that combine
-          innovation, efficiency, and style.
+          Explore our range of energy-efficient LED lighting solutions designed
+          for various applications
         </p>
       </div>
       <div class="col-lg-6 text-lg-end">
-        <a href="{% url 'products' %}" class="btn btn-outline-primary"
-          >View All Products</a
-        >
+        <a href="{% url 'products' %}" class="btn btn-outline-primary">
+          <i class="bi bi-grid-3x3-gap me-2"></i>View All Products
+        </a>
       </div>
     </div>
     <div class="row g-4">
-      <!-- Product Card 1 -->
+      {% if products %} {% for product in products %}
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 product-card">
           <div class="card-img-top position-relative">
             <img
-              src="{% static 'core/images/products/product-1.jpg' %}"
-              alt="LED Panel Light"
+              src="{{ product.image.url }}"
+              alt="{{ product.name }}"
               class="img-fluid"
+              style="height: 200px; object-fit: cover"
             />
+            {% if forloop.first %}
             <span class="badge bg-primary position-absolute top-0 end-0 m-3"
-              >New</span
+              >Featured</span
             >
+            {% endif %}
           </div>
           <div class="card-body">
-            <h5 class="card-title">LED Panel Light</h5>
+            <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text text-secondary">
-              Ultra-thin design with uniform light distribution. Perfect for
-              office spaces.
+              {{ product.description|truncatewords:20 }}
             </p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="text-primary fw-bold">36W / 48W</span>
-              <a
-                href="{% url 'products' %}"
-                class="btn btn-sm btn-outline-primary"
-                >Learn More</a
+              <button
+                class="btn btn-sm btn-outline-primary w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal{{ product.id }}"
               >
+                <i class="bi bi-info-circle me-2"></i>View Details
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <!-- Product Card 2 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 product-card">
-          <div class="card-img-top">
-            <img
-              src="{% static 'core/images/products/product-2.jpg' %}"
-              alt="LED Street Light"
-              class="img-fluid"
-            />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">LED Street Light</h5>
-            <p class="card-text text-secondary">
-              High-performance outdoor lighting with advanced heat dissipation.
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="text-primary fw-bold">100W / 150W</span>
-              <a
-                href="{% url 'products' %}"
-                class="btn btn-sm btn-outline-primary"
-                >Learn More</a
-              >
+
+      <!-- Product Modal -->
+      <div class="modal fade" id="productModal{{ product.id }}" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">
+                <i class="bi bi-box-seam me-2"></i>{{ product.name }}
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <img
+                    src="{{ product.image.url }}"
+                    class="img-fluid rounded"
+                    alt="{{ product.name }}"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <h6 class="mb-3">
+                    <i class="bi bi-file-text me-2"></i>Description
+                  </h6>
+                  <p>{{ product.description }}</p>
+                  <h6 class="mb-3">
+                    <i class="bi bi-list-check me-2"></i>Specifications
+                  </h6>
+                  <p>{{ product.specifications|linebreaks }}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Product Card 3 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 product-card">
-          <div class="card-img-top">
-            <img
-              src="{% static 'core/images/products/product-3.jpg' %}"
-              alt="LED Flood Light"
-              class="img-fluid"
-            />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">LED Flood Light</h5>
-            <p class="card-text text-secondary">
-              Powerful illumination for large areas and outdoor spaces.
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="text-primary fw-bold">50W / 100W</span>
-              <a
-                href="{% url 'products' %}"
-                class="btn btn-sm btn-outline-primary"
-                >Learn More</a
-              >
-            </div>
-          </div>
-        </div>
+      {% endfor %} {% else %}
+      <div class="col-12 text-center py-5">
+        <i class="bi bi-box-seam display-1 text-secondary mb-3"></i>
+        <h3>No Products Available</h3>
+        <p class="text-secondary">Products will be added soon.</p>
       </div>
-      <!-- Product Card 4 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 product-card">
-          <div class="card-img-top position-relative">
-            <img
-              src="{% static 'core/images/products/product-4.jpg' %}"
-              alt="Smart LED Bulb"
-              class="img-fluid"
-            />
-            <span class="badge bg-success position-absolute top-0 end-0 m-3"
-              >Smart</span
-            >
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Smart LED Bulb</h5>
-            <p class="card-text text-secondary">
-              WiFi-enabled smart bulb with millions of colors and automation.
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="text-primary fw-bold">9W / 12W</span>
-              <a
-                href="{% url 'products' %}"
-                class="btn btn-sm btn-outline-primary"
-                >Learn More</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endif %}
     </div>
   </div>
 </section>

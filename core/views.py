@@ -8,6 +8,7 @@ def get_common_context(request):
 
 def home(request):
     context = get_common_context(request)
+    context['products'] = Product.objects.all()[:4]  # Get first 4 products for featured section
     return render(request, 'core/home.html', context)
 
 def about(request):
