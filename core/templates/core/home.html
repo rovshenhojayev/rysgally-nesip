@@ -92,10 +92,10 @@
 <!-- Features Section -->
 <section class="py-5">
   <div class="container">
-    <h2 class="text-center mb-5">Why Choose Our Light Bulbs?</h2>
+    <h2 class="text-center mb-5 reveal">Why Choose Our Light Bulbs?</h2>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="text-center">
+        <div class="text-center reveal-left delay-1">
           <i class="bi bi-lightning-charge display-4 text-primary"></i>
           <h3 class="mt-3">Energy Efficient</h3>
           <p>
@@ -104,14 +104,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="text-center">
+        <div class="text-center reveal delay-2">
           <i class="bi bi-clock-history display-4 text-primary"></i>
           <h3 class="mt-3">Long Lasting</h3>
           <p>Our bulbs are designed to last up to 25,000 hours</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="text-center">
+        <div class="text-center reveal-right delay-3">
           <i class="bi bi-tree display-4 text-primary"></i>
           <h3 class="mt-3">Eco-Friendly</h3>
           <p>Reduce your carbon footprint with our sustainable products</p>
@@ -125,14 +125,14 @@
 <section class="py-5">
   <div class="container">
     <div class="row align-items-center mb-5">
-      <div class="col-lg-6">
+      <div class="col-lg-6 reveal-left">
         <h2 class="display-5 fw-bold mb-4">Our Featured Products</h2>
         <p class="lead text-secondary mb-4">
           Explore our range of energy-efficient LED lighting solutions designed
           for various applications
         </p>
       </div>
-      <div class="col-lg-6 text-lg-end">
+      <div class="col-lg-6 text-lg-end reveal-right">
         <a href="{% url 'products' %}" class="btn btn-outline-primary">
           <i class="bi bi-grid-3x3-gap me-2"></i>View All Products
         </a>
@@ -141,7 +141,9 @@
     <div class="row g-4">
       {% if products %} {% for product in products %}
       <div class="col-md-6 col-lg-3">
-        <div class="card h-100 product-card">
+        <div
+          class="card h-100 product-card reveal-scale delay-{{ forloop.counter }}"
+        >
           <div class="card-img-top position-relative">
             <img
               src="{{ product.image.url }}"
@@ -167,52 +169,7 @@
           </div>
         </div>
       </div>
-
-      <!-- Product Modal -->
-      <div class="modal fade" id="productModal{{ product.id }}" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">
-                <i class="bi bi-box-seam me-2"></i>{{ product.name }}
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <img
-                    src="{{ product.image.url }}"
-                    class="img-fluid rounded"
-                    alt="{{ product.name }}"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <h6 class="mb-3">
-                    <i class="bi bi-file-text me-2"></i>Description
-                  </h6>
-                  <p>{{ product.description }}</p>
-                  <h6 class="mb-3">
-                    <i class="bi bi-list-check me-2"></i>Specifications
-                  </h6>
-                  <p>{{ product.specifications|linebreaks }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %} {% else %}
-      <div class="col-12 text-center py-5">
-        <i class="bi bi-box-seam display-1 text-secondary mb-3"></i>
-        <h3>No Products Available</h3>
-        <p class="text-secondary">Products will be added soon.</p>
-      </div>
-      {% endif %}
+      {% endfor %} {% endif %}
     </div>
   </div>
 </section>
@@ -281,28 +238,28 @@
   <div class="container">
     <div class="row g-4 text-center">
       <div class="col-md-3">
-        <div class="p-4 d-flex flex-column align-items-center">
+        <div class="p-4 reveal-left delay-1">
           <i class="bi bi-lightning-charge display-4 text-primary mb-3"></i>
           <h3 class="h4 mb-2">Production</h3>
           <p class="text-secondary mb-0">High-Volume Manufacturing</p>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="p-4 d-flex flex-column align-items-center">
+        <div class="p-4 reveal delay-2">
           <i class="bi bi-award display-4 text-primary mb-3"></i>
           <h3 class="h4 mb-2">Quality</h3>
           <p class="text-secondary mb-0">International Standards</p>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="p-4 d-flex flex-column align-items-center">
+        <div class="p-4 reveal delay-3">
           <i class="bi bi-people display-4 text-primary mb-3"></i>
           <h3 class="h4 mb-2">Team</h3>
           <p class="text-secondary mb-0">Expert Professionals</p>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="p-4 d-flex flex-column align-items-center">
+        <div class="p-4 reveal-right delay-4">
           <i class="bi bi-graph-up-arrow display-4 text-primary mb-3"></i>
           <h3 class="h4 mb-2">Growth</h3>
           <p class="text-secondary mb-0">Continuous Innovation</p>
@@ -316,7 +273,7 @@
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-6">
+      <div class="col-lg-6 reveal-left">
         <h2 class="display-5 fw-bold mb-4">Download Our Product Catalog</h2>
         <p class="lead text-secondary mb-4">
           Get detailed information about our products, specifications, and
@@ -331,7 +288,7 @@
           Complete Package
         </a>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6 reveal-right delay-2">
         <div class="position-relative">
           <div class="card catalog-preview-card">
             <div class="card-body p-4 text-center">
@@ -352,14 +309,14 @@
 <section class="py-5 bg-primary text-white">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-8">
+      <div class="col-lg-8 reveal-left">
         <h2 class="display-5 fw-bold mb-3">Ready to Upgrade Your Lighting?</h2>
         <p class="lead mb-lg-0">
           Contact us today for a free consultation and find the perfect lighting
           solution for your needs.
         </p>
       </div>
-      <div class="col-lg-4 text-lg-end">
+      <div class="col-lg-4 text-lg-end reveal-right delay-2">
         <a href="{% url 'contact' %}" class="btn btn-light btn-lg"
           >Contact Us</a
         >

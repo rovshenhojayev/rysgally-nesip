@@ -99,4 +99,33 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  // Scroll Reveal Animation
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2,
+  };
+
+  const revealCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  };
+
+  const scrollObserver = new IntersectionObserver(
+    revealCallback,
+    observerOptions
+  );
+
+  // Observe all elements with reveal classes
+  document
+    .querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-rotate"
+    )
+    .forEach((element) => {
+      scrollObserver.observe(element);
+    });
 });
