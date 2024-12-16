@@ -922,3 +922,172 @@ a:hover {
 .delay-4 {
   transition-delay: 0.4s;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Carousel adjustments */
+  #mainCarousel .carousel-item img {
+    height: 50vh !important;
+  }
+
+  #mainCarousel .carousel-caption {
+    padding: 1rem;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  #mainCarousel .carousel-caption h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #mainCarousel .carousel-caption p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #mainCarousel .carousel-caption .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Features section */
+  .col-md-3 {
+    margin-bottom: 2rem;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 1.75rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  /* Product cards */
+  .product-card .card-img-top {
+    height: 180px;
+  }
+
+  .product-card .card-title {
+    font-size: 1.1rem;
+  }
+
+  .product-card .card-text {
+    font-size: 0.9rem;
+  }
+
+  /* Stats section */
+  .stats-section .col-md-3 {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Why Choose Us section */
+  .card.border-0.bg-transparent {
+    margin-bottom: 1.5rem;
+  }
+
+  .card.border-0.bg-transparent h4 {
+    font-size: 1.2rem;
+  }
+
+  .card.border-0.bg-transparent p {
+    font-size: 0.9rem;
+  }
+
+  /* Buttons */
+  .btn-lg {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Navigation */
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-brand img {
+    height: 30px;
+  }
+
+  /* Spacing adjustments */
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+
+  /* Feature icons */
+  .mt-4.d-flex.justify-content-center.gap-3 {
+    flex-wrap: wrap;
+  }
+
+  .mt-4.d-flex.justify-content-center.gap-3 .text-center {
+    flex: 0 0 33.333%;
+    padding: 0.5rem;
+  }
+
+  .mt-4.d-flex.justify-content-center.gap-3 .display-4 {
+    font-size: 1.5rem;
+  }
+
+  .mt-4.d-flex.justify-content-center.gap-3 .small {
+    font-size: 0.75rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 576px) {
+  #mainCarousel .carousel-item img {
+    height: 40vh !important;
+  }
+
+  #mainCarousel .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .display-4 {
+    font-size: 1.75rem;
+  }
+
+  .display-5 {
+    font-size: 1.5rem;
+  }
+
+  .navbar-brand .brand-text {
+    font-size: 1.1rem;
+  }
+
+  .mt-4.d-flex.justify-content-center.gap-3 {
+    gap: 0.5rem !important;
+  }
+
+  .mt-4.d-flex.justify-content-center.gap-3 .text-center {
+    padding: 0.25rem;
+  }
+
+  .mt-4.d-flex.justify-content-center.gap-3 .display-4 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Ensure smooth transitions */
+.carousel-item img,
+.carousel-caption,
+.display-4,
+.display-5,
+.lead,
+.btn,
+.card {
+  transition: all 0.3s ease-in-out;
+}
