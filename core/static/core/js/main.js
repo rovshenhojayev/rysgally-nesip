@@ -1,18 +1,34 @@
-// Language Switcher
-document.addEventListener("DOMContentLoaded", function () {
-  // Language form submission
-  const langForm = document.getElementById("language-form");
-  if (langForm) {
-    const langInputs = langForm.querySelectorAll('input[type="submit"]');
-    langInputs.forEach((input) => {
-      input.addEventListener("click", function (e) {
-        e.preventDefault();
-        langForm.submit();
-      });
-    });
-  }
+// Use strict mode for better performance and error catching
+"use strict";
 
-  // Bootstrap Carousel Configuration
+// Main initialization function
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize all components with a single IntersectionObserver
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Unobserve after animation to save resources
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.2,
+    }
+  );
+
+  // Observe all animated elements
+  document
+    .querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-rotate"
+    )
+    .forEach((el) => observer.observe(el));
+
+  // Initialize carousels if they exist
   const mainCarousel = document.getElementById("mainCarousel");
   if (mainCarousel) {
     new bootstrap.Carousel(mainCarousel, {
@@ -29,103 +45,74 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Initialize all tooltips
-  const tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  );
-  tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
-
-  // Initialize all popovers
-  const popoverTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="popover"]')
-  );
-  popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl);
-  });
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    });
-  });
-
-  // Navbar scroll behavior
+  // Optimize scroll event with throttling
+  let lastScrollTime = 0;
   const navbar = document.querySelector(".navbar");
   if (navbar) {
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 50) {
-        navbar.classList.add("navbar-scrolled");
-      } else {
-        navbar.classList.remove("navbar-scrolled");
-      }
-    });
+    window.addEventListener(
+      "scroll",
+      () => {
+        const now = Date.now();
+        if (now - lastScrollTime > 100) {
+          // Throttle to max 10 times per second
+          lastScrollTime = now;
+          navbar.classList.toggle("navbar-scrolled", window.scrollY > 50);
+        }
+      },
+      { passive: true }
+    );
   }
 
-  // Modal image zoom
-  const modalImages = document.querySelectorAll(".modal img");
-  modalImages.forEach((img) => {
-    img.addEventListener("click", function () {
-      this.classList.toggle("zoomed");
-    });
+  // Event delegation for modal images
+  document.addEventListener("click", (e) => {
+    if (e.target.matches(".modal img")) {
+      e.target.classList.toggle("zoomed");
+    }
   });
 
-  // Product filter (if exists)
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const productItems = document.querySelectorAll(".product-item");
+  // Initialize tooltips and popovers only if needed
+  const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  if (tooltips.length) {
+    tooltips.forEach((el) => new bootstrap.Tooltip(el));
+  }
 
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const filterValue = button.getAttribute("data-filter");
+  const popovers = document.querySelectorAll('[data-bs-toggle="popover"]');
+  if (popovers.length) {
+    popovers.forEach((el) => new bootstrap.Popover(el));
+  }
 
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
+  // Smooth scroll with requestAnimationFrame
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(anchor.getAttribute("href"));
+      if (target) {
+        const targetPosition =
+          target.getBoundingClientRect().top + window.pageYOffset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
 
-      productItems.forEach((item) => {
-        if (filterValue === "all" || item.classList.contains(filterValue)) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
+        function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const progress = Math.min(timeElapsed / 500, 1);
+          const ease = easeOutCubic(progress);
+
+          window.scrollTo(0, startPosition + distance * ease);
+
+          if (timeElapsed < 500) {
+            requestAnimationFrame(animation);
+          }
         }
-      });
-    });
-  });
 
-  // Scroll Reveal Animation
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.2,
-  };
-
-  const revealCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
+        requestAnimationFrame(animation);
       }
     });
-  };
-
-  const scrollObserver = new IntersectionObserver(
-    revealCallback,
-    observerOptions
-  );
-
-  // Observe all elements with reveal classes
-  document
-    .querySelectorAll(
-      ".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-rotate"
-    )
-    .forEach((element) => {
-      scrollObserver.observe(element);
-    });
+  });
 });
+
+// Easing function for smooth scroll
+function easeOutCubic(t) {
+  return 1 - Math.pow(1 - t, 3);
+}
